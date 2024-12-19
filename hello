@@ -1,0 +1,68 @@
+import time
+
+def greet_user():
+    print("Welcome to STEAMHAMLET: The Collaborative Mashup Experience!")
+    time.sleep(1)
+    print("Let's create something amazing together.")
+    time.sleep(1)
+
+    options = [
+        "Start a new mashup project",
+        "Learn how STEAMHAMLET works",
+        "Explore existing projects",
+        "Exit"
+    ]
+
+    print("\nWhat would you like to do?")
+    for i, option in enumerate(options, start=1):
+        print(f"{i}. {option}")
+
+    choice = input("\nEnter the number of your choice: ")
+    handle_choice(choice)
+
+def handle_choice(choice):
+    if choice == "1":
+        start_mashup()
+    elif choice == "2":
+        explain_steamhamlet()
+    elif choice == "3":
+        explore_projects()
+    elif choice == "4":
+        exit_program()
+    else:
+        print("Invalid choice. Please try again.")
+        greet_user()
+
+def start_mashup():
+    print("\nGreat! Let's start your mashup project.")
+    print("Choose two elements to mash up (e.g., 'Hamlet' and 'Science').")
+    element1 = input("Enter the first element: ")
+    element2 = input("Enter the second element: ")
+    print(f"\nFantastic! You're creating a mashup of {element1} and {element2}.")
+    print("Next steps:")
+    print("1. Brainstorm ideas for your mashup")
+    print("2. Add collaborators")
+    print("3. Define project goals")
+    print("4. Begin creating content")
+    # Add further implementation for project creation
+
+def explain_steamhamlet():
+    print("\nSTEAMHAMLET is a collaborative framework where you can merge various disciplines into creative projects.")
+    print("It encourages interdisciplinary thinking by allowing users to blend elements of art, science, technology, and more.")
+    print("\nUse STEAMHAMLET to brainstorm, collaborate, and innovate!")
+    greet_user()
+
+def explore_projects():
+    print("\nHere are some existing projects to explore:")
+    print("1. Hamlet x Artificial Intelligence")
+    print("2. Theater and Mathematics")
+    print("3. Historical Drama Meets Modern Science")
+    print("\nExplore these and get inspired to create your own!")
+    greet_user()
+
+def exit_program():
+    print("\nThank you for using STEAMHAMLET. Goodbye!")
+    exit()
+
+if __name__ == "__main__":
+    greet_user()
